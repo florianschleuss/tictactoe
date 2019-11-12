@@ -1,7 +1,7 @@
 # TicTacToe Game
-[![Latest Stable Version](https://img.shields.io/github/v/releas/florianschleuss/tictactoe)]
-[![Total Downloads](https://img.shields.io/github/downloads/florianschleuss/tictactoe)]
-[![License](https://img.shields.io/github/license/florianschleuss/tictactoe)]
+![Latest Stable Version](https://img.shields.io/github/v/release/florianschleuss/tictactoe)
+![Total Downloads](https://img.shields.io/github/downloads/florianschleuss/tictactoe/total)
+![License](https://img.shields.io/github/license/florianschleuss/tictactoe)
 
 #### Table of Contents
 1. [Basic Instruction](#basic-instruction)
