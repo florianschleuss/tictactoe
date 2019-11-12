@@ -1,7 +1,4 @@
-# TicTacToe Game
-![Latest Stable Version](https://img.shields.io/github/v/release/florianschleuss/tictactoe)
-![Total Downloads](https://img.shields.io/github/downloads/florianschleuss/tictactoe/total)
-![License](https://img.shields.io/github/license/florianschleuss/tictactoe)
+# TicTacToe Game ![Latest Stable Version](https://img.shields.io/github/v/release/florianschleuss/tictactoe) ![Total Downloads](https://img.shields.io/github/downloads/florianschleuss/tictactoe/total) ![License](https://img.shields.io/github/license/florianschleuss/tictactoe)
 
 #### Table of Contents
 1. [Basic Instruction](#basic-instruction)
@@ -41,4 +38,4 @@ public class TicTacToe {
 ```
 
 ## License
-The TicTacToe game is licensed under the terms of the GPL Open Source license and is available for free.
+The TicTacToe game is licensed under the terms of the [GPL Open Source license](LICENSE) and is available for free.
