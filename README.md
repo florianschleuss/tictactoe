@@ -1,4 +1,4 @@
-# TicTacToe Game <span dir="rtl" align="right">![Latest Stable Version](https://img.shields.io/github/v/release/florianschleuss/tictactoe) ![Total Downloads](https://img.shields.io/github/downloads/florianschleuss/tictactoe/total) ![License](https://img.shields.io/github/license/florianschleuss/tictactoe)</span>
+# TicTacToe Game ![Latest Stable Version](https://img.shields.io/github/v/release/florianschleuss/tictactoe) ![Repository Size](https://img.shields.io/github/repo-size/florianschleuss/tictactoe/total) ![License](https://img.shields.io/github/license/florianschleuss/tictactoe) <img style="float: right;" src="https://github.com/simple-icons/simple-icons/blob/master/icons/java.svg">
 
 
 #### Table of Contents
