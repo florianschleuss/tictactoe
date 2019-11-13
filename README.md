@@ -1,5 +1,12 @@
+<style>
+  img{
+    float: right;
+    max-height: 5em;
+  }
+</style>
+
 # TicTacToe Game ![Latest Stable Version](https://img.shields.io/github/v/release/florianschleuss/tictactoe) ![Repository Size](https://img.shields.io/github/repo-size/florianschleuss/tictactoe) ![License](https://img.shields.io/github/license/florianschleuss/tictactoe)
-<img src="https://github.com/simple-icons/simple-icons/blob/master/icons/java.svg" style="float: right; width: 5em">
+<img src="https://github.com/simple-icons/simple-icons/blob/master/icons/java.svg">
 
 
 #### Table of Contents
