@@ -1,33 +1,54 @@
+import java.util.Scanner;
+
 public class TicTacToe {
 
+    public Player[][] board;
     private int ROWS = 3;
     private int COLS = 3;
-
-    public enum Player {
-        Unknown, X, O
-    }
-
-    public Player[][] board;
     private Player currentPlayer;
     private Player winner;
+    private Scanner sc = new Scanner(System.in);
 
     public TicTacToe() {
-        initialiazeBoard();
-        currentPlayer = Player.O;
-        while (!isGameOver()){
-			play();
+        this.initialiazeBoard();
+        this.currentPlayer = Player.O;
+        while (!this.isGameOver()) {
+			System.out.println("Please insert the column of your choice (from " + this.ROWS + " - " + this.COLS + "):");
+			byte col = sc.nextByte(); - 1 //-1 cause of array-index
+			System.out.println("Please insert the row of your choice (from " + this.ROWS + " - " + this.COLS + "):");
+			byte row = sc.nextByte(); - 1 //-1 cause of array-index
+            this.play(row, col);
+        }
+        if (this.isGameWon()) {
+            System.out.println("The winner is: " + this.getWinner());
+        }
+        if (this.isDraw()) {
+            System.out.println("Its a draw!");
+        }
+        sc.close();
+    }
+
+    public void play(int row, int col) {
+    	try {
+			this.board[col][row] = this.getCurrentPlayer();
+		}
+    	catch (IndexOutOfBoundsException e){
+			System.out.println("You have entered a number outside the grid.\nNext player gets the turn!");
+		}
+
+        if (this.getCurrentPlayer() == Player.O){
+        	this.currentPlayer = Player.X
+		}
+        else if (this.getCurrentPlayer() == Player.X){
+        	this.currentPlayer = Player.O
 		}
     }
 
-    public void play(int row, in col) {
-		
-    }
-
     public void initialiazeBoard() {
-        board = new Player[ROWS][COLS];
-        for (int i = 0; i < board.length; i++) {
-            for (int j = 0; j < board[i].length; j++) {
-                board[i][j] = Player.Unknown;
+        this.board = new Player[this.ROWS][this.COLS];
+        for (int i = 0; i < this.board.length; i++) {
+            for (int j = 0; j < this.board[i].length; j++) {
+                this.board[i][j] = Player.Unknown;
             }
         }
     }
@@ -46,31 +67,32 @@ public class TicTacToe {
 
     public boolean isGameWon() {
         boolean won = false;
-        for (int i = 0; i < board.length; i++) //horizontal win
-            if (board[i][0] == board[i][1] && board[i][0] == board[i][2]) {
+        for (int i = 0; i < this.board.length; i++) //horizontal win
+            if (this.board[i][0] == this.board[i][1] && this.board[i][0] == this.board[i][2]) {
                 won = true;
-                winner = board[i][0];
+                this.winner = this.board[i][0];
             }
-        for (int i = 0; i < board[0].length; i++) //vertical win
-            if (board[0][i] == board[1][i] && board[0][i] == board[2][i]) {
+        for (int i = 0; i < this.board[0].length; i++) //vertical win
+            if (this.board[0][i] == this.board[1][i] && this.board[0][i] == this.board[2][i]) {
                 won = true;
-                winner = board[0][i];
+                this.winner = this.board[0][i];
             }
-        if (board[0][0] == board[1][1] && board[0][0] == board[2][2]) { //diagonal win
+        if (this.board[0][0] == this.board[1][1] && this.board[0][0] == this.board[2][2]) { //diagonal win
             won = true;
-            winner = board[0][0];
+            this.winner = this.board[0][0];
         }
-        if (board[0][2] == board[1][1] && board[0][2] == board[2][0]) { //diagonal win 2nd
+        if (this.board[0][2] == this.board[1][1] && this.board[0][2] == this.board[2][0]) { //diagonal win 2nd
             won = true;
-            winner = board[0][2];
+            this.winner = this.board[0][2];
         }
+        return won;
     }
 
     public boolean isDraw() {
         boolean draw = true;
-        for (int i = 0; i < board.length; i++) {
-            for (int j = 0; j < board[i].length; j++) {
-                if (board[i][j] == Player.Unknown) {
+        for (int i = 0; i < this.board.length; i++) {
+            for (int j = 0; j < this.board[i].length; j++) {
+                if (this.board[i][j] == Player.Unknown) {
                     draw = false;
                 }
             }
@@ -79,7 +101,7 @@ public class TicTacToe {
     }
 
     public boolean isGameOver() {
-        return isDraw() || isGameWon();
+        return this.isDraw() || this.isGameWon();
     }
 
     public Player getWinner() {
@@ -88,5 +110,9 @@ public class TicTacToe {
 
     public Player getCurrentPlayer() {
         return this.currentPlayer;
+    }
+
+    public enum Player {
+        Unknown, X, O
     }
 }
